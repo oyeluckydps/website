@@ -3,142 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website</title>
+  <title>Abhinav Kumar Verma</title>
   <style>
     /* Body Styles */
     body {
       margin: 0;
-      background-color: rgb(25, 150, 150);
+      background-color: rgb(206, 231, 238);
     }
 
-	/* Banner Styles */
-	.banner {
-	  max-height: 300px;
-//	  background-image: url('assets/banner.jpg');
-	  background-color: rgb(7, 25, 27); /* Darker background */
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  flex-direction: column;
-	  font-family: 'Merriweather', serif;
-	  font-size: 2.5rem;
-	  font-weight: bold;
-	  color: rgb(55, 245, 245); /* Lighter font color */
-	  padding: 80px 0px 10px 0px; /* Margin above the name */
-	}
+    /* Banner Styles */
+    .banner {
+      max-height: 300px;
+	  background-image: url('assets/banner2.jpg');
+      background-color: rgb(7, 25, 27); /* Darker background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: rgb(255, 245, 245); /* Lighter font color */
+      padding: 80px 0px 10px 0px; /* Margin above the name */
+    }
 
-	.banner-links {
-	  display: flex;
-	  flex-wrap: wrap;
-	  justify-content: center;
-	  align-items: center;
-	  font-size: 1.1rem;
-	  margin-top: 0.5rem;
-	  font-family: 'Oswald', sans-serif; /* Tall, sans-serif font */
-	}
+    .banner-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      font-family: 'Oswald', sans-serif; /* Tall, sans-serif font */
+    }
 
-	.banner-links a, .banner-links span {
-	  color: inherit;
-	  text-decoration: none;
-	  margin: 0 5px;
-	}
+    .banner-links span {
+      color: inherit;
+      text-decoration: none;
+      margin: 0 5px;
+    }
 
-	/* Menu Styles */
-	.menu {
-	  background-color: rgb(7, 25, 27);
-	  color: rgb(55, 245, 245);
-	  display: flex;
-	  justify-content: center;
-	  padding: 0;
-	  font-family: 'Lato', sans-serif;
-	}
+    /* Menu Styles */
+    .menu {
+      background-color: rgb(7, 25, 27);
+      color: rgb(55, 245, 245);
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      font-family: 'Lato', sans-serif;
+    }
 
-	.menu a {
-	  color: inherit;
-	  text-decoration: none;
-	  padding: 1rem;
-	  font-size: 1.1rem;
-	  transition: background-color 0.3s, color 0.3s;
-	}
+    .menu a {
+      color: inherit;
+      text-decoration: none;
+      padding: 1rem;
+      font-size: 1.1rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-	.menu a:hover {
-	  background-color: rgb(55, 245, 245);
-	  color: rgb(7, 25, 27);
-	}
+    .menu a:hover {
+      background-color: rgb(55, 245, 245);
+      color: rgb(7, 25, 27);
+    }
 
-	/* Dropdown Menu Styles */
-	.menu .dropdown {
-	  position: relative;
-	  top: 16px;
-	}
+    /* Dropdown Menu Styles */
+    .menu .dropdown {
+      position: relative;
+      top: 16px;
+    }
 
-	.menu .dropdown-content {
-	  display: none;
-	  position: absolute;
-	  background-color: rgb(7, 25, 27);
-	  color: rgb(55, 245, 245);
-	  min-width: 260px;
-	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	  z-index: 1;
-	  font-family: 'Lato', sans-serif;
-	}
+    .menu .dropdown-content {
+      display: none;
+      position: absolute;
+	  top: 36px;
+      background-color: rgb(7, 25, 27);
+      color: rgb(55, 245, 245);
+      min-width: 260px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      font-family: 'Lato', sans-serif;
+    }
 
-	.menu .dropdown:hover .dropdown-content {
-	  display: block;
-	}
+    .menu .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-	.menu .dropdown-content a {
-	  color: inherit;
-	  padding: 12px 16px;
-	  text-decoration: none;
-	  display: block;
-	  font-size: 1.1rem;
-	  transition: background-color 0.3s, color 0.3s;
-	}
+    .menu .dropdown-content a {
+      color: inherit;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 1.1rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-	.menu .dropdown-content a:hover {
-	  background-color: rgb(55, 245, 245);
-	  color: rgb(7, 25, 27);
-	}
+    .menu .dropdown-content a:hover {
+      background-color: rgb(55, 245, 245);
+      color: rgb(7, 25, 27);
+    }
 
-	.menu .dropdown:hover > .menu-link {
-	  background-color: rgb(55, 245, 245);
-	  color: rgb(7, 25, 27);
-	}
+    .menu .dropdown:hover > .menu-link {
+      background-color: rgb(55, 245, 245);
+      color: rgb(7, 25, 27);
+    }
 
-	/* Blog Section Styles */
-	.blog-section {
-	  background-color: #f5f5f5;
-	  margin-top: 0;
-	  padding: 2rem;
-	  max-width: 900px;
-	  margin-left: auto;
-	  margin-right: auto;
-	  font-family: 'Montserrat', sans-serif;
-	  text-align: justify;
-	}
+    /* Blog Section Styles */
+    .blog-section {
+      background-color: #f5f5f5;
+      margin-top: 0;
+      padding: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: justify;
+    }
 
-	.blog-section h2 {
-	  text-align: center;
-	  margin-top: 0;
-	  font-size: 2.5rem;
-	  color: rgb(25, 150, 150);
-	  font-family: 'Merriweather', serif;
-	}
+    .blog-section h2 {
+      text-align: center;
+      margin-top: 0;
+      font-size: 2.5rem;
+      color: rgb(25, 150, 150);
+      font-family: 'Merriweather', serif;
+    }
 
-	.blog-section p {
-	  font-size: 1.1rem;
-	  color: #333;
-	  line-height: 1.6;
-	}
+    .blog-section p {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+    }
 
-	.blog-section img {
-	  float: right;
-	  margin-left: 1rem;
-	  max-width: 200px;
-	  height: 300px;
-	  object-fit: cover;
-	}
+    .blog-section img {
+      float: right;
+      margin-left: 1rem;
+      max-width: 200px;
+      height: 300px;
+      object-fit: cover;
+    }
   </style>  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -147,15 +148,12 @@
 
 </head>
 <body>
-	<div class="banner">
-	  ABHINAV KUMAR VERMA
-	  <div class="banner-links">
-		<a href="https://github.com/oyeluckydps">GitHub</a> |
-		<a href="mailto:akverma47@outlook.com">Email</a> |
-		<span>24<sup>th</sup> Sep 1997</span> |
-		<span>Indian</span>
-	  </div>
-	</div>
+  <div class="banner">
+    ABHINAV KUMAR VERMA
+    <div class="banner-links">
+      <span>Tackling AGI through Complex Systems and Network Sciences</span>
+    </div>
+  </div>
   <div class="menu">
     <a href="about.html">About</a>
     <div class="dropdown">
@@ -168,24 +166,26 @@
       </div>
     </div>
     <a href="resume.html">Resume</a>
+    <a href="publications.html">Publications</a>
     <a href="events.html">Events</a>
+    <a href="https://github.com/oyeluckydps" target="_blank">GitHub</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="blog-section">
 
-    <h2>About</h2>
+    <h2>About me</h2>
     <img src="assets/portrait.jpg" alt="Blog Image">
-	<p>I am Abhinav Kumar Verma, age 27 years, exploring the frontiers of Complex Adaptive Systems, Network Sciences, and AI. I focus on developing advanced AGI systems by leveraging technologies like deep learning and large language models and integrating it with the latest development in the domain of complex sciences, dynamics of and on networks, information theory, and cognitive science.</P>
+    <p>I am Abhinav Kumar Verma, age 27 years, exploring the frontiers of Complex Adaptive Systems, Network Sciences, and AI. I focus on developing advanced AGI systems by leveraging technologies like deep learning and large language models and integrating it with the latest development in the domain of complex sciences, dynamics of and on networks, information theory, and cognitive science.</p>
 
-	<p>I completed my Matriculation (Class 10th) and Intermediate (Class 12th) from the CBSE board at Delhi Public School, Varanasi. During my school, I participated in multiple prestigious olympiads and qualified INMO and KVPY. I joined the Department of Electronics and Electrical Communication Engineering at IIT Kharagpur in 2014. I was trained rigorously in the undergraduate and graduate subjects such as linear algebra, probability, algorithms, information theory, statistical signal processing, etc. I consistently performed well and improved my SGPA from 8.36 to 9.71 in the last semester demonstrating my resilience and determination to excel. For my M.Tech thesis, I developed an end-to-end physical later simulator of WiFi in MATLAB under the expert guidance of Prof. Suvra Sekhar Das.</p>
+    <p>I completed my Matriculation (Class 10th) and Intermediate (Class 12th) from the CBSE board at Delhi Public School, Varanasi. During my school, I participated in multiple prestigious olympiads and qualified INMO and KVPY. I joined the Department of Electronics and Electrical Communication Engineering at IIT Kharagpur in 2014. I was trained rigorously in the undergraduate and graduate subjects such as linear algebra, probability, algorithms, information theory, statistical signal processing, etc. I consistently performed well and improved my SGPA from 8.36 to 9.71 in the last semester demonstrating my resilience and determination to excel. For my M.Tech thesis, I developed an end-to-end physical later simulator of WiFi in MATLAB under the expert guidance of Prof. Suvra Sekhar Das.</p>
 
-	<p>During the college, I participated in multiple hackathons, businees pitches, product design competitions, robotics challenges, etc winning accolades in circuit design, game theory, and robotics. I interned at prestigious institutions such as Team Indus (a space agency) and Laval University gaining experience in domains ranging from Space Technologies to Quantum Computing and ASIC design. With these skills and experience, I can design, prototype, and produce ny hardware systems. During the final two years, I received training in Telecommunication System Engineering (my M.Tech specialization) where I gained expertise in advance wireless communication subjects such as MIMO communication, OFDM, signal processing etc.</p>
+    <p>During the college, I participated in multiple hackathons, businees pitches, product design competitions, robotics challenges, etc winning accolades in circuit design, game theory, and robotics. I interned at prestigious institutions such as Team Indus (a space agency) and Laval University gaining experience in domains ranging from Space Technologies to Quantum Computing and ASIC design. With these skills and experience, I can design, prototype, and produce ny hardware systems. During the final two years, I received training in Telecommunication System Engineering (my M.Tech specialization) where I gained expertise in advance wireless communication subjects such as MIMO communication, OFDM, signal processing etc.</p>
 
-	<p>After college, I joined the modem systems team at Qualcomm in Hyderabad. I designed multple system protocol and simulator for cutting-edge cellular technologies. I took multiple initiatives to improve the exsisting workflow by automating processes leading to conservation of man-hours. I integrated systems to predict power consumption of upcoming chips in advance, leading to competetive edge in constrained timeframe. Lastly, I worked on design of a high-speed inter chip communication protocol and simulator for efficient transfer of data between radio and modem units. At Qualcomm, I was a part of diversified team across the globe and learnt the importance of teamwork and trust. With these skills and experience, I am prepared to deal with challenges on multiple fronts, coordinate among large groups, and lead a team of dedicated members as required. </p>
+    <p>After college, I joined the modem systems team at Qualcomm in Hyderabad. I designed multple system protocol and simulator for cutting-edge cellular technologies. I took multiple initiatives to improve the exsisting workflow by automating processes leading to conservation of man-hours. I integrated systems to predict power consumption of upcoming chips in advance, leading to competetive edge in constrained timeframe. Lastly, I worked on design of a high-speed inter chip communication protocol and simulator for efficient transfer of data between radio and modem units. At Qualcomm, I was a part of diversified team across the globe and learnt the importance of teamwork and trust. With these skills and experience, I am prepared to deal with challenges on multiple fronts, coordinate among large groups, and lead a team of dedicated members as required.</p>
 
-	<p>What is Intelligence? Is my smartphone or a dolphin smarter/more intelligent than my tennis racquet? What about the collective intelligence of all humanity, the internet, and individualistic zeal and curiosity? Can intelligence be quantified, studied, or modelled? – It is questions along these lines of enquiry that drove me towards Complex Science. While working, I delved myself in study of network science, random graph theory, non-linear dynamics, cognitive psychology, neuroscience, AI/ML, GNNs, and LLM. I resigned from Qualcomm in July 2023, and have devoted myself completely to self-study and independent reserach since. I have worked on four projects related to these projects and have a research paper on generation of edge-critical directed graphs (check Random Graphs in Projects sub-menu) in submission pipeline. These projects are in the domain of LLM, network science, random graph theory, and cellular automata and reflect upon my interests.</p>
+    <p>What is Intelligence? Is my smartphone or a dolphin smarter/more intelligent than my tennis racquet? What about the collective intelligence of all humanity, the internet, and individualistic zeal and curiosity? Can intelligence be quantified, studied, or modelled? – It is questions along these lines of enquiry that drove me towards Complex Science. While working, I delved myself in study of network science, random graph theory, non-linear dynamics, cognitive psychology, neuroscience, AI/ML, GNNs, and LLM. I resigned from Qualcomm in July 2023, and have devoted myself completely to self-study and independent reserach since. I have worked on four projects related to these projects and have a research paper on generation of edge-critical directed graphs (check Random Graphs in Projects sub-menu) in submission pipeline. These projects are in the domain of LLM, network science, random graph theory, and cellular automata and reflect upon my interests.</p>
 
-	<p>Currently, I am actively looking for a doctoral position in closely related and interdependent domains of Network Sciecne, Complex Systems, Networks on Brain, or/and Graph Neural Networks.</p>
+    <p>Currently, I am actively looking for a doctoral position in closely related and interdependent domains of Network Sciecne, Complex Systems, Networks on Brain, or/and Graph Neural Networks.</p>
   </div>
 </body>
 </html>
