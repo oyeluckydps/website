@@ -11,10 +11,11 @@
       background-color: rgb(25, 150, 150);
     }
 
-    /* Banner Styles */
+	/* Banner Styles */
 	.banner {
 	  max-height: 300px;
-	  background-color: rgb(55, 245, 245);
+//	  background-image: url('assets/banner.jpg');
+	  background-color: rgb(7, 25, 27); /* Darker background */
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
@@ -22,14 +23,24 @@
 	  font-family: 'Merriweather', serif;
 	  font-size: 2.5rem;
 	  font-weight: bold;
-	  color: rgb(7, 25, 27);
+	  color: rgb(55, 245, 245); /* Lighter font color */
+	  padding: 80px 0px 10px 0px; /* Margin above the name */
 	}
 
-	.banner a {
-	  color: inherit;
-	  text-decoration: none;
+	.banner-links {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  align-items: center;
 	  font-size: 1.1rem;
 	  margin-top: 0.5rem;
+	  font-family: 'Oswald', sans-serif; /* Tall, sans-serif font */
+	}
+
+	.banner-links a, .banner-links span {
+	  color: inherit;
+	  text-decoration: none;
+	  margin: 0 5px;
 	}
 
 	/* Menu Styles */
@@ -66,7 +77,7 @@
 	  position: absolute;
 	  background-color: rgb(7, 25, 27);
 	  color: rgb(55, 245, 245);
-	  min-width: 160px;
+	  min-width: 260px;
 	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	  z-index: 1;
 	  font-family: 'Lato', sans-serif;
@@ -78,8 +89,7 @@
 
 	.menu .dropdown-content a {
 	  color: inherit;
-	  padding: 0px;
-	  margin: 12px 16px;
+	  padding: 12px 16px;
 	  text-decoration: none;
 	  display: block;
 	  font-size: 1.1rem;
@@ -101,7 +111,7 @@
 	  background-color: #f5f5f5;
 	  margin-top: 0;
 	  padding: 2rem;
-	  max-width: 800px;
+	  max-width: 900px;
 	  margin-left: auto;
 	  margin-right: auto;
 	  font-family: 'Montserrat', sans-serif;
@@ -132,19 +142,20 @@
   </style>  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
-  <div class="banner">
-    ABHINAV KUMAR VERMA
-    <div>
-      <a href="https://github.com/oyeluckydps">GitHub</a> |
-      <a href="mailto:akverma47@outlook.com">Email</a> |
-      <h3>Date of Birth: 24th Sep 1997</h3> | 
-	  <h3>Nationality: Indian</h3>
-    </div>
-  </div>
+	<div class="banner">
+	  ABHINAV KUMAR VERMA
+	  <div class="banner-links">
+		<a href="https://github.com/oyeluckydps">GitHub</a> |
+		<a href="mailto:akverma47@outlook.com">Email</a> |
+		<span>24<sup>th</sup> Sep 1997</span> |
+		<span>Indian</span>
+	  </div>
+	</div>
   <div class="menu">
     <a href="about.html">About</a>
     <div class="dropdown">
