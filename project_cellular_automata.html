@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   
+  
 </head>
 <body>
   <div class="banner">
@@ -119,14 +120,74 @@
           Your browser does not support the video tag.
         </video>
       </div>
-		<div class="slideshow-controls">
-		  <button class="prev-button" disabled>❮</button>
-		  <button class="next-button">❯</button>
-		</div>
+      <div class="slideshow-controls">
+        <button onclick="prevSlide()" aria-label="Previous slide">&#10094;</button>
+        <button onclick="nextSlide()" aria-label="Next slide">&#10095;</button>
+      </div>
     </div>
   </div>
 
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const controls = document.querySelector('.slideshow-controls');
+    let timeoutId;
 
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      
+      // Pause all videos when switching slides
+      const videos = document.querySelectorAll('video');
+      videos.forEach(video => video.pause());
+
+      // Show/hide controls based on current slide type
+      toggleControlsVisibility();
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function toggleControlsVisibility() {
+      const currentContent = slides[currentSlide].querySelector('video');
+      if (currentContent) {
+        // If it's a video slide, handle mouse movement
+        controls.classList.add('hidden');
+        
+        const videoContainer = slides[currentSlide];
+        videoContainer.addEventListener('mousemove', showControlsTemporarily);
+      } else {
+        // If it's an image slide, always show controls
+        controls.classList.remove('hidden');
+        clearTimeout(timeoutId);
+      }
+    }
+
+    function showControlsTemporarily() {
+      controls.classList.remove('hidden');
+      clearTimeout(timeoutId);
+      
+      timeoutId = setTimeout(() => {
+        controls.classList.add('hidden');
+      }, 3000); // Hide after 3 seconds of inactivity
+    }
+
+    // Initialize the first slide
+    showSlide(0);
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
   <script src="slideshow.js"></script> 
 </body>
 </html>
