@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Remove PDF viewer UI elements */
+        #documentViewer {
+            border: none;
+            height: 100%;
+            width: 100%;
+        }
+        
+        /* Hide the toolbar and viewer controls */
+        #documentViewer::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        #documentViewer::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        #documentViewer::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        
+        /* Force hide PDF controls */
+        .viewer-pdf {
+            margin: 0 !important;
+            border: 0 !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="p-6">
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Document Library</h1>
+            <p class="text-gray-600 mt-2">Access and view your documents</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="max-w-6xl mx-auto">
+            <!-- Tab Navigation -->
+            <div class="border-b border-gray-200">
+                <nav class="flex -mb-px" id="tabs">
+                    <!-- Tabs will be inserted here by JavaScript -->
+                </nav>
+            </div>
+
+            <!-- Document Viewer -->
+            <div class="mt-6">
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="flex justify-between items-center p-4">
+                        <h2 class="text-xl font-semibold" id="currentDocName">Document Name</h2>
+                        <button 
+                            id="downloadBtn"
+                            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 flex items-center gap-2"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+                    <div class="w-full h-[75vh] overflow-hidden">
+                        <object
+                            id="documentViewer"
+                            type="application/pdf"
+                            data=""
+                            class="w-full h-full"
+                        >
+                        </object>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Document configuration
+        const documents = {
+            doc1: {
+                name: "Sample Document 1",
+                url: "resume_AbhinavKVerma.pdf",
+                type: "pdf"
+            },
+            doc2: {
+                name: "Sample Document 2",
+                url: "docs/sample2.pdf",
+                type: "pdf"
+            }
+        };
+
+        // Setup tabs
+        const tabsContainer = document.getElementById('tabs');
+        let isFirst = true;
+        
+        for (const [key, doc] of Object.entries(documents)) {
+            const tab = document.createElement('button');
+            tab.className = `mr-8 py-4 px-4 ${isFirst ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500 hover:text-gray-700'}`;
+            tab.textContent = doc.name;
+            tab.onclick = () => showDocument(key);
+            tabsContainer.appendChild(tab);
+            isFirst = false;
+        }
+
+        // Function to show document
+        function showDocument(docKey) {
+            const doc = documents[docKey];
+            
+            // Update tabs
+            document.querySelectorAll('#tabs button').forEach(tab => {
+                tab.classList.remove('border-b-2', 'border-blue-500', 'text-blue-600');
+                tab.classList.add('text-gray-500');
+                if(tab.textContent === doc.name) {
+                    tab.classList.add('border-b-2', 'border-blue-500', 'text-blue-600');
+                }
+            });
+
+            // Update viewer
+            document.getElementById('currentDocName').textContent = doc.name;
+            const viewer = document.getElementById('documentViewer');
+            viewer.data = doc.url + '#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&pagemode=none';
+            document.getElementById('downloadBtn').onclick = () => window.open(doc.url, '_blank');
+        }
+
+        // Show first document by default
+        showDocument(Object.keys(documents)[0]);
+    </script>
+</body>
+</html>
