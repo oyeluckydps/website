@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>	
+		.card {
+			max-width: 900px;
+		}
+		
+        .project-tile {
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            overflow: hidden; /* Ensure no overflow issues */
+        }
+
+        .project-tile a {
+            display: block;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: left;
+        }
+
+        .project-tile a:hover {
+            color: rgb(7, 25, 27);
+            background-color: rgb(206, 231, 238);
+        }
+
+        .project-tile h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .project-tile p, .project-tile li, .project-tile ul {
+            line-height: 1.6; /* Line height within a paragraph or list item */
+            text-align: justify;
+        }
+
+        .project-tile p, .project-tile li {
+            margin: 0 0 10px; /* Add margin below each paragraph and list item */
+            padding-left: 20px; /* For list indentation if needed */
+        }
+
+        .project-tile ul {
+            margin: 0 0 10px; /* Add margin below the entire unordered list */
+            padding-left: 20px; /* For list indentation */
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        ABHINAV KUMAR VERMA
+        <div class="banner-links">
+          <span>Tackling AGI through Complex Systems and Network Sciences</span>
+        </div>
+    </div>
+    <div class="menu">
+        <a href="index.html">About</a>
+        <div class="dropdown">
+          <a href="projects.html" class="menu-link">Projects</a>
+          <div class="dropdown-content">
+            <a href="projects/neurosymbolic-system.html">Neurosymbolic System</a>
+            <a href="projects/dynamics-on-network.html">Dynamics on Network</a>
+            <a href="projects/random-graphs.html">Random Graphs</a>
+            <a href="projects/cellular-automata.html">Cellular Automata</a>
+          </div>
+        </div>
+        <a href="resume.html">Resume</a>
+        <a href="publications.html">Publications</a>
+        <a href="events.html">Events</a>
+        <a href="https://github.com/oyeluckydps" target="_blank">GitHub</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="card">
+        <h1 class="card-title">Projects</h1>
+        <div class="project-tile">
+            <a href="projects/neurosymbolic-system.html">
+                <h2>Neurosymbolic System</h2>
+                <li>Developed a neurosymbolic reasoning system combining the intuition of LLMs (System 2) with heuristic search over custom domain-specific libraries (System 1).</li>
+                <li>Implemented a causation detection mechanism to automatically identify the transformation rules leading from input to output visual grid.</li>
+                <li>Enhanced the system's generalization capability by implementing adaptive learning loops over linguistic queries for efficient Python code generation using the DSPy library.</li>
+                <li>Achieved high accuracy in the prediction of grid size, type of patterns, and count of patterns. Achieved medium-low accuracy in causation detection and replication.</li>
+            </a>
+        </div>
+        <div class="project-tile">
+            <a href="projects/dynamics-on-network.html">
+                <h2>Dynamics on Network</h2>
+                <li>Enhanced the networkx library to develop a module for the generation and handling of random, strongly connected directed graphs without isomorphic bias as observed in various natural and artificial systems.</li>
+                <li>Developed a network simulator with adaptive agents at each node, exploring their internal dynamics over algorithmic space during synchronous gameplay.</li>
+				<li>Deduced the stabilization and emergence criteria for signals of agents from an evolutionary game theory perspective.</li>
+            </a>
+        </div>
+        <div class="project-tile">
+            <a href="projects/random-graphs.html">
+                <h2>Random Graphs</h2>
+                <li>Discovered two algorithms for generation of strongly connected, edge-critical, directed graphs. Found all such graphs for 2-10 nodes.</li>
+				<li>Discovered an algorithm to generate all strongly connected, edge-critical, directed graphs of N+1 nodes given the collection of all such graphs of N nodes. Proved the theoretical correctedness of the algorithm.</li>
+                <li>Based the above-mentioned result, found an algorithm to generate random, strongly connected directed graphs without isomorphic bias. This was used in the Dynamics on Network project.</li>
+            </a>
+        </div>
+        <div class="project-tile">
+            <a href="projects/cellular-automata.html">
+                <h2>Cellular Automata</h2>
+                <li>Simulated binary cellular automata on topologies like ring, hypercube, clique, etc to detect and study the emergence of complex patterns using all first neighbour binary evolution rules.</li>
+				<li>It was found that unlike a 1D-ring (where Rules 30 and 110 lead to emergent structures), other rules also lead to emergent behaviour on different network topologies.</li>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
