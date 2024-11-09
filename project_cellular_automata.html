@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Graphs</title>
+  <title>Cellular Automata</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="project_pages_styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  
   
 </head>
 <body>
@@ -42,152 +41,31 @@
   <div class="main-content">
     <div class="card-container">
       <div class="card">
-        <h2 class="card-title">Random Graphs Analysis</h2>
-        
-        <h3>Introduction</h3>
-        <p>Random graphs are mathematical structures that combine graph theory with probability theory. They are essential tools in the analysis of complex networks and have applications in various fields, including social networks, biological systems, and computer science.</p>
-        
-        <h3>Key Concepts</h3>
-        <ul>
-          <li>Erdős-Rényi Model
-            <ul>
-              <li>G(n,p) model: Each edge exists with probability p</li>
-              <li>G(n,M) model: Exactly M edges are chosen randomly</li>
-            </ul>
-          </li>
-          <li>Properties
-            <ul>
-              <li>Degree distribution</li>
-              <li>Connected components</li>
-              <li>Average path length</li>
-            </ul>
-          </li>
-        </ul>
-        
-        <h3>Applications</h3>
-        <p>Random graphs find applications in numerous areas:</p>
-        <ol>
-          <li>Network Science
-            <ul>
-              <li>Social network modeling</li>
-              <li>Information diffusion</li>
-              <li>Disease spread prediction</li>
-            </ul>
-          </li>
-          <li>Computer Science
-            <ul>
-              <li>Algorithm analysis</li>
-              <li>Network protocol testing</li>
-            </ul>
-          </li>
-        </ol>
-        
-        <h3>Methodology</h3>
-        <p>Our research focuses on developing new algorithms for analyzing random graph properties. We employ various statistical methods and computational tools to understand the emergence of complex patterns in random networks.</p>
-        
-        <h3>Results</h3>
-        <p>Through our analysis, we have discovered several interesting properties of random graphs that have implications for real-world network design and analysis. These findings contribute to both theoretical understanding and practical applications in network science.</p>
-        
-        <h3>Future Work</h3>
-        <p>We are currently exploring new directions in random graph theory, including:</p>
-        <ul>
-          <li>Dynamic random graphs</li>
-          <li>Multi-layer network models</li>
-          <li>Applications in machine learning</li>
-        </ul>
-      </div>
+        <h2 class="card-title">Phase transition in cellular automata on boolean networks</h2>
+		<li>Simulated binary cellular automata on topologies like ring, hypercube, clique, etc to detect and study the emergence of complex patterns using all first neighbour binary evolution rules.</li>
+		<li>It was found that unlike a 1D-ring (where Rules 30 and 110 lead to emergent structures), other rules also lead to emergent behaviour on different network topologies.</li>
+		<br/>
+		<p> The video demonstrates one of the interesting cases where phase transition was clearly observed on binary hypercube of order N=7.</p>
+		<p style="color:red">* If the large play button at the center of the video does not work, kindly click on the small play button at the bottom-left of the video player.</p>
+	  </div>
     </div>
     
     <div class="slideshow-container">
-      <div class="slide active">
-        <img src="random_graphs_mm/slide1.jpg" alt="Random Graph Visualization 1">
-      </div>
-      <div class="slide">
-        <img src="random_graphs_mm/slide2.jpg" alt="Random Graph Visualization 2">
-      </div>
-      <div class="slide">
-        <img src="random_graphs_mm/slide3.jpg" alt="Random Graph Visualization 3">
-      </div>
-      <div class="slide">
-        <img src="random_graphs_mm/slide4.jpg" alt="Random Graph Visualization 4">
-      </div>
-      <div class="slide">
-        <img src="random_graphs_mm/slide5.jpg" alt="Random Graph Visualization 5">
-      </div>
-      <div class="slide">
+	  <div class="slide">
         <video controls>
-          <source src="random_graphs_mm/sample1.mp4" type="video/mp4">
+          <source src="cellular_automata_mm/Phase_Transition_in_F_XOR_G_1000_CA_Hypercube7.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
-      <div class="slideshow-controls">
-        <button onclick="prevSlide()" aria-label="Previous slide">&#10094;</button>
-        <button onclick="nextSlide()" aria-label="Next slide">&#10095;</button>
-      </div>
+	  
+		<div class="slideshow-controls">
+		  <button class="prev-button" disabled>❮</button>
+		  <button class="next-button">❯</button>
+		</div>
     </div>
   </div>
 
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const controls = document.querySelector('.slideshow-controls');
-    let timeoutId;
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      
-      currentSlide = (index + slides.length) % slides.length;
-      slides[currentSlide].classList.add('active');
-      
-      // Pause all videos when switching slides
-      const videos = document.querySelectorAll('video');
-      videos.forEach(video => video.pause());
-
-      // Show/hide controls based on current slide type
-      toggleControlsVisibility();
-    }
-
-    function nextSlide() {
-      showSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-      showSlide(currentSlide - 1);
-    }
-
-    function toggleControlsVisibility() {
-      const currentContent = slides[currentSlide].querySelector('video');
-      if (currentContent) {
-        // If it's a video slide, handle mouse movement
-        controls.classList.add('hidden');
-        
-        const videoContainer = slides[currentSlide];
-        videoContainer.addEventListener('mousemove', showControlsTemporarily);
-      } else {
-        // If it's an image slide, always show controls
-        controls.classList.remove('hidden');
-        clearTimeout(timeoutId);
-      }
-    }
-
-    function showControlsTemporarily() {
-      controls.classList.remove('hidden');
-      clearTimeout(timeoutId);
-      
-      timeoutId = setTimeout(() => {
-        controls.classList.add('hidden');
-      }, 3000); // Hide after 3 seconds of inactivity
-    }
-
-    // Initialize the first slide
-    showSlide(0);
-
-    // Add keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
-    });
-  </script>
   <script src="slideshow.js"></script> 
 </body>
 </html>

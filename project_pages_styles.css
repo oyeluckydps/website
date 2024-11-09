@@ -24,6 +24,21 @@ body {
   padding: 1.5rem;
 }
 
+.card p, .card li, .card ul {
+	line-height: 1.6; /* Line height within a paragraph or list item */
+	text-align: justify;
+}
+
+.card p, .card li {
+	margin: 0 0 10px; /* Add margin below each paragraph and list item */
+	padding-left: 20px; /* For list indentation if needed */
+}
+
+.card ul {
+	margin: 0 0 10px; /* Add margin below the entire unordered list */
+	padding-left: 20px; /* For list indentation */
+}
+
 .slideshow-container {
   width: 60%;
   height: 100%;
